@@ -554,6 +554,15 @@ html, body {
       background-color: $code-annotation-bg;
       padding: $code-annotation-padding 2em;
       color: #eee;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+
+      code {
+        text-transform: none;
+        color: $drac-pink;
+      }
     }
   }
 }
