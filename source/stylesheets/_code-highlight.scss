@@ -8,16 +8,20 @@
   color: $drac-green !important;
 }
 
-.highlight .no, .highlight .kd {
+.highlight .no {
   color: $drac-cyan !important;
 }
 
-.highlight .nb {
-  color: $drac-orange !important;
+.highlight .kd, .highlight .kn, .highlight .nb {
+  color: $drac-pink !important;
 }
 
-.highlight .kn, .highlight .o, .highlight .nl {
+.highlight .o {
   color: $drac-red !important;
+}
+
+.highlight .nl {
+  color: $drac-white !important;
 }
 
 .highlight .s1, .highlight .s2 {
