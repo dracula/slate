@@ -407,16 +407,18 @@ html, body {
 
     th {
       padding: 5px 10px;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #e2e6e8;
       vertical-align: bottom;
+      font-size: 14px;
     }
 
     td {
       padding: 10px;
+      font-size: 14px;
     }
 
     tr:last-child {
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #e2e6e8;
     }
 
     tr:nth-child(odd)>td {
