@@ -462,13 +462,16 @@ html, body {
     margin-bottom: 1.5em;
     background: $aside-notice-bg;
     line-height: 1.6;
+    color: $aside-notice-text;
 
     &.warning {
       background-color: $aside-warning-bg;
+      color: $aside-warning-text;
     }
 
     &.success {
       background-color: $aside-success-bg;
+      color: $aside-success-text;
     }
   }
 

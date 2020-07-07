@@ -20,14 +20,29 @@ under the License.
 ////////////////////////////////////////////////////////////////////////////////
 // Use these settings to help adjust the appearance of Slate
 
+// DRACULA THEME
+$drac-bg: #282a36;
+$drac-dark-bg: #191C2B;
+$drac-light-bg: #44475a;
+$drac-white: #FAFAFA;
+$drac-comment: #6272a4;
+$drac-cyan: #8be9fd;
+$drac-green: #50fa7b;
+$drac-orange: #ffb86c;
+$drac-pink: #ff79c6;
+$drac-purple: #bd93f9;
+$drac-red: #ff5555;
+$drac-yellow: #f1fa8c;
+
+
 
 // BACKGROUND COLORS
 ////////////////////
-$nav-bg: #FAFBFA !default;
-$examples-bg: #282a36 !default;
-$code-bg: #191C2B !default;
-$code-annotation-bg: #282a36 !default;
-$nav-subitem-bg: #FAFBFA !default;
+$nav-bg: $drac-white !default;
+$examples-bg: $drac-bg !default;
+$code-bg: $drac-bg !default;
+$code-annotation-bg: #44475a !default;
+$nav-subitem-bg: $drac-white !default;
 $nav-active-bg: #FFF !default;
 $nav-active-parent-bg: #FFF !default; // parent links of the current section
 $lang-select-border: #000 !default;
@@ -35,18 +50,21 @@ $lang-select-bg: #1E2224 !default;
 $lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
 $lang-select-pressed-bg: #111 !default; // color of language tab bg when mouse is pressed
 $main-bg: #FFF !default;
-$aside-notice-bg: #8fbcd4 !default;
-$aside-warning-bg: #c97a7e !default;
-$aside-success-bg: #6ac174 !default;
-$search-notice-bg: #c97a7e !default;
+$aside-notice-bg: #E7EEFE !default;
+$aside-notice-text: #1457F9 !default;
+$aside-warning-bg: #FFEAED !default;
+$aside-warning-text: #C78925 !default;
+$aside-success-bg: #EAF4EF !default;
+$aside-success-text: #448A6B !default;
+$search-notice-bg: #FFEAED !default;
 
 
 // TEXT COLORS
 ////////////////////
-$main-text: #282a36 !default; // main content text color
-$nav-text: #6c7279 !default;
-$nav-active-text: #282a36 !default;
-$nav-active-parent-text: #282a36 !default; // parent links of the current section
+$main-text: $drac-bg !default; // main content text color
+$nav-text: $drac-bg !default;
+$nav-active-text: $drac-bg !default;
+$nav-active-parent-text: $drac-bg !default; // parent links of the current section
 $lang-select-text: #fff !default; // color of unselected language tab text
 $lang-select-active-text: #fff !default; // color of selected language tab text
 $lang-select-pressed-text: #fff !default; // color of language tab text when mouse is pressed

@@ -1,27 +1,29 @@
+@import 'variables';
+
 .highlight .c {
-  color: #6272a4 !important;
+  color: $drac-comment !important;
 }
 
 .highlight .nf, .highlight .fm {
-  color: #50fa7b !important;
+  color: $drac-green !important;
 }
 
 .highlight .no, .highlight .kd {
-  color: #8be9fd !important;
+  color: $drac-cyan !important;
 }
 
 .highlight .nb {
-  color: #ffb86c !important;
+  color: $drac-orange !important;
 }
 
 .highlight .kn, .highlight .o, .highlight .nl {
-  color: #ff5555 !important;
+  color: $drac-red !important;
 }
 
 .highlight .s1, .highlight .s2 {
-  color: #f1fa8c !important;
+  color: $drac-yellow !important;
 }
 
 .highlight .mi {
-  color: #bd93f9 !important;
+  color: $drac-purple !important;
 }

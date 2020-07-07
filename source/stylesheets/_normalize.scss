@@ -1,5 +1,7 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
+@import "variables";
+
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
@@ -88,6 +90,7 @@ template {
 
 a {
     background-color: transparent;
+    color: $drac-red;
 }
 
 /**
@@ -424,4 +427,9 @@ table {
 td,
 th {
     padding: 0;
+}
+
+.image-logo {
+  width: 85px;
+  margin: 25px auto;
 }
