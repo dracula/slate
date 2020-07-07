@@ -287,8 +287,11 @@ html, body {
     padding: 0 10px;
     line-height: 30px;
     outline: 0;
-    font-weight: 600;
     margin-right: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
 
     &:active, &:focus {
       background-color: $drac-pink;
