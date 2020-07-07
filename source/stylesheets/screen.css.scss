@@ -211,30 +211,27 @@ html, body {
 #nav-button {
   span {
     display: block;
-    $side-pad: $main-padding / 2 - 8px;
-    padding: $side-pad $side-pad $side-pad;
-    background-color: rgba($main-bg, 0.7);
-    transform-origin: 0 0;
-    transform: rotate(-90deg) translate(-100%, 0);
-    border-radius: 0 0 0 5px;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: $drac-bg;
+    border-radius: 0 3px 3px 0;
   }
-  padding: 0 1.5em 5em 0; // increase touch size area
+  padding: 0 1.5em 5em 0;
   display: none;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  color: #000;
+  color: $drac-bg;
   text-decoration: none;
   font-weight: bold;
-  opacity: 0.7;
   line-height: 16px;
+  transition: left 0.3s ease-in-out;
+
   img {
     height: 16px;
     vertical-align: bottom;
   }
-
-  transition: left 0.3s ease-in-out;
 
   &:hover { opacity: 1; }
   &.open {left: $nav-width}
@@ -352,7 +349,7 @@ html, body {
   h1 {
     @extend %header-font;
     font-size: 30px;
-    padding-top: 0.5em;
+    padding-top: 1em;
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
@@ -563,6 +560,10 @@ html, body {
 // There are also a couple styles disperesed
 
 @media (max-width: $tablet-width) {
+  .content {
+    padding-top: 28px;
+  }
+
   .toc-wrapper {
     left: -$nav-width;
 
@@ -586,6 +587,7 @@ html, body {
 }
 
 @media (max-width: $phone-width) {
+
   .dark-box {
     display: none;
   }
