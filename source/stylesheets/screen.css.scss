@@ -451,11 +451,18 @@ html, body {
   }
 
   code {
-    background-color: rgba(0,0,0,0.05);
+    background-color: $drac-white;
     padding: 3px;
     border-radius: 3px;
     @extend %break-words;
     @extend %code-font;
+  }
+
+  p code {
+    background-color: $drac-white;
+    padding: 3px 5px;
+    border-radius: 3px;
+    color: $drac-red;
   }
 
   pre>code {
@@ -471,6 +478,7 @@ html, body {
     background: $aside-notice-bg;
     line-height: 1.6;
     color: $aside-notice-text;
+    font-size: 14px;
 
     &.warning {
       background-color: $aside-warning-bg;
@@ -487,6 +495,8 @@ html, body {
     vertical-align: middle;
     padding-right: 0.5em;
     font-size: 14px;
+    position: relative;
+    top: -1px;
   }
 
   aside.notice:before {
@@ -576,6 +586,10 @@ html, body {
 @media (max-width: $tablet-width) {
   .content {
     padding-top: 28px;
+  }
+
+  .content>.highlight+p {
+    margin-top: 28px;
   }
 
   .toc-wrapper {
