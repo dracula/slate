@@ -550,6 +550,11 @@ html, body {
       text-decoration: none;
       border-bottom: dashed 1px #ccc;
     }
+
+    p code {
+      background: rgba(#FFF,.05);
+      padding: 2px 5px;
+    }
   }
 
   pre {
