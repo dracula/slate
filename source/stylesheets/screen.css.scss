@@ -470,6 +470,16 @@ html, body {
     padding: 0;
   }
 
+ a{
+  &.appendix{
+  color:blue;
+  font-weight:300;
+  font-size:18px;
+  font-family:"Raleway";
+  display:flex;
+  }
+  }
+
   aside {
     padding-top: 1em;
     padding-bottom: 1em;

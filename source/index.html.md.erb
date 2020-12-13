@@ -1,0 +1,315 @@
+---
+title: LendingKart
+
+language_tabs:
+  - shell
+
+toc_footers:
+  - <a href='www.lendingkart.com'>Take a Loan</a>
+  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+
+includes:
+  - errors
+
+search: true
+
+code_clipboard: true
+---
+
+# Introduction
+
+Welcome to Lendingkart Partner API documentation. This documentation provides access to the end to end
+Lendingkart Partner API suite. Integrate our APIs quickly to enable Lendingkart loan journey in your platforms to
+provide a unique experience to your customers.
+
+<%= image_tag "images/images1.png" %>
+
+
+##Onboarding Process
+Please reach out to your SPOC from the Lendingkart Partnerships team to get your UAT API Key.
+##Sourcing Guidelines:
+Please refer to the below link for basic Lendingkart application sourcing guidelines(Negative Industries and
+Negative pin codes mentioned here). We recommend that you source leads based on these criteria to ensure
+lower rejection rates by filtering the leads upfront at your end.
+[link](https://docs.google.com/spreadsheets/d/1_GxM3sZeuhTE-oKFN0HYKDz4LHMj-k5FD22b80CCf0I/edit?usp=sha
+ring)
+
+
+[click here for swagger link](https://lkext.lendingkart.com/apidoc/home.html#!/Partner_Controller/)
+
+##Support
+Please mail us at help.partnerDB@lendingkart.com incase you have any queries on API Documentation. Our
+team will respond to your queries within 24 hours.
+##API Integration Process
+Production API key will be provided after the integration process is approved in UAT flow by Lendingkart Product
+team.
+##Partner Dashboard - Tracking
+All Applications pushed to Lendingkart using Application creation API will be available in your partner dashboard
+for live tracking. Please request Partner Dashboard login credentials from your SPOC from Lendingkart
+Partnerships team in case you haven’t yet received login credentials.
+[Tutorial Video](https://www.youtube.com/watch?v=kCl6ZmkL4A8&feature=youtu.be)
+##Lendingkart API Documentation for Partners:
+
+<a href="#authentication" class="appendix">0. Authorize</a>
+<a href="#application-creation-api" class="appendix">1. Application creation API</a>
+<a href="#document-upload-api" class="appendix">2. Document upload API</a>
+<a href="#document-status-api" class="appendix">3. Document Status API</a>
+<a href="#disbursal-data-api" class="appendix">4. Get disbursal data API</a>
+<a href="#errors" class="appendix">5. Errors</a>
+
+
+# Authentication
+
+lendingkart apis uses API keys to allow access to the API. You can get a  API key at our [developer portal](http://lendingkart.com).
+
+This Api expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`X-Api-Key: 'Your Api key'`
+
+<aside class="notice">
+You must replace <code>Your Api key</code> with your personal API key.
+</aside>
+
+# Application creation API
+```shell
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Api-Key: f3a25750-1e7f-4c34-84ae-c8ca92f1d211'
+ 'https://lkext.lendingkart.com/v2/partner/leads/create-application'
+```
+
+This api creates an application in lendingkart system and returns a leadId along with an applicationId on SUCCESS.
+
+### HTTP Request
+
+`POST https://lkext.lendingkart.com/v2/partner/leads/create-application`
+
+
+
+> Output response:
+
+```json
+{
+  "leadId": "341134",
+  "applicationId": null,
+  "message": "Application or lead already exist with us",
+  "errorMessageList": null,
+  "uniqueId": "string",
+  "loanDeliveryMethod": null
+}
+```
+### Query Parameters
+
+No query parameter
+
+###Sample Request body
+
+<code>
+{<br>
+  "firstName": "Bala",<br>
+  "lastName": "Ganesh",<br>
+  "email": "Bala.Ganeshtest1@example.com",<br>
+  "mobile": "6666698762",<br>
+  "businessRevenue": 5000000,<br>
+  "businessAge": 24,<br>
+  "registeredAs": "Proprietorship",<br>
+  "personalDob": "1990-05-21",<br>
+  "personalPAN": "ARTPA1156H",<br>
+  "gender": "MALE",<br>
+  "cibilConsentForLK": true,<br>
+  "mobileNoVerified": true,<br>
+  "personalAddress": {<br>
+    "ownership": "string",<br>
+    "address": "4/5, Race Course Road",<br>
+    "city": "Coimbatore",<br>
+    "state": "TamilNadu",<br>
+    "pincode": "641041"<br>
+  },<br>
+  "businessRunBy": "Self",<br>
+  "loanAmount": 100000,<br>
+  "typeOfLoan": "INSTANT",<br>
+  "companyName": "Sakthi Enterprises",<br>
+  "businessAddress": {<br>
+    "ownership": "string",<br>
+    "address": "4/5, Race Course Road",<br>
+    "city": "Coimbatore",<br>
+    "state": "TamilNadu",<br>
+    "pincode": "641041"<br>
+  },<br>
+  "loanNeedTime": "After 2 weeks",<br>
+  "uniqueId": "string",<br>
+  "otherFields": {}<br>
+}
+</code>
+
+##Response Body
+Field | Description | Data Type
+------| -----------|---------
+ leadId | This is unique leadId | String
+ application ID | This is application id | String
+ message | This is message returned | String
+ loanDeliveryMethod | This is delivery method of you application | String
+ leadId | This is unique leadId | String
+
+<aside class="success">
+Succesful api call would give you 200
+</aside>
+
+[To try this Api please click this](https://lkext.lendingkart.com/apidoc/home.html#!/Partner_Controller/leadApplicationCreationUsingPOST)
+
+# Document upload API
+```shell
+curl -X POST --header 'Content-Type: multipart/form-data' --header 'Accept: */*' --header 'X-Api-Key: f3a25750-1e7f-4c34-84ae-c8ca92f1d211' {"type":"formData"}
+ 'https://lkext.lendingkart.com/v2/partner/leads/documents'
+```
+
+This API enables document upload functionality for partners.
+
+### HTTP Request
+
+`POST https://lkext.lendingkart.com/v2/partner/leads/documents`
+
+
+```json
+
+```
+### Query Parameters
+
+|Parameter|Description|Data Type|Required|
+|---------|-----------|---------|--------|
+|applicationId|This is application id|String|true|
+|documentType|This is document type| String |true|
+|bankName|This is bank name|String|false|
+|bankAccountNo|This is bankAccountNo|String|false|
+
+
+<aside class="success">
+Succesful api call would give you 200
+</aside>
+
+[To try this Api please click this](https://lkext.lendingkart.com/apidoc/home.html#!/Partner_Controller/uploadDocumentsUsingPOST)
+
+#Document Status API
+
+```shell
+curl -X GET --header 'Accept: application/json' --header 'X-Api-Key: f3a25750-1e7f-4c34-84ae-c8ca92f1d211'
+'https://lkext.lendingkart.com/v2/partner/leads/document-status?applicationId=LAI-110081529&context=PRE_TERMS'
+```
+> Output response:
+
+```json
+[
+  {
+    "documentType": "string",
+    "documents": [
+      {
+        "documentTag": "string",
+        "latestVerificationDate": "2020-12-13T14:33:39.948Z",
+        "pendencyDetails": [
+          {
+            "autoGenText": "string",
+            "comments": "string",
+            "uuid": "string",
+            "verificationDate": "2020-12-13T14:33:39.948Z",
+            "verificationStatus": "PENDING"
+          }
+        ]
+      }
+    ],
+    "latestVerificationStatus": "PENDING"
+  }
+]
+```
+This API will provide document status and any document pendencies raised for an application
+
+### HTTP Request
+
+`GET https://lkext.lendingkart.com/v2/partner/leads/document-status`
+
+### Query Parameters
+
+|Parameter|Description|Data Type|Required|
+|---------|-----------|---------|--------|
+|applicationId|This is application id|String|true|
+|context|This is pre-term,posterm,all|String|true|
+
+<aside class="warning">
+This api do not contain request body
+</aside>
+
+##Response Body
+
+Field | Description | Data Type
+------| -----------|---------
+ leadId | This is unique leadId | String
+ application ID | This is application id | String
+ message | This is message returned | String
+ loanDeliveryMethod | This is delivery method of you application | String
+ leadId | This is unique leadId | String
+
+<aside class="success">
+Succesful api call would give you 200
+</aside>
+
+[To try this Api please click this](https://lkext.lendingkart.com/apidoc/home.html#!/Partner_Controller/getDocumentPendenciesUsingGET)
+
+#disbursal data API
+
+```shell
+curl -X GET --header 'Accept: application/json' --header 'X-Api-Key: f3a25750-1e7f-4c34-84ae-c8ca92f1d211'
+ 'https://lkext.lendingkart.com/v2/partner/leads/disbursal-data/LAI-110081529'
+```
+> Output response:
+
+```json
+{
+  "disbursalDate": "2018-03-21T18:30:00.000Z",
+  "emiDetails": {
+    "emiAmount": 0,
+    "emiEndDate": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+    "emisRemaining": 0,
+    "latestEmiDelay": 0,
+    "maxDelay": 0,
+    "nextDueDate": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+    "totalEmis": 0
+  },
+  "interestRate": 36,
+  "interestType": "Fixed",
+  "loanAmount": 500010,
+  "loanBankAccountDetails": {
+    "accountHolderName": "Bala",
+    "accountNumber": "88888888888",
+    "accountType": "Savings account",
+    "bankName": "AXIS BANK",
+    "branchName": "Koramangala"
+  },
+  "loanDisbursalAmount": 500000,
+  "loanId": "LAI-110081529"
+}
+```
+This API provides the details related to disbursal of a loan.
+
+### HTTP Request
+
+`GET https://lkext.lendingkart.com/v2/partner/leads/disbursal-data/<your applicationId>`
+
+### Query Parameters
+No query parameters
+
+<aside class="warning">
+This api do not contain request body
+</aside>
+
+##Response Body
+
+Field | Description | Data Type
+------| -----------|---------
+ leadId | This is unique leadId | String
+ application ID | This is application id | String
+ message | This is message returned | String
+ loanDeliveryMethod | This is delivery method of you application | String
+ leadId | This is unique leadId | String
+
+<aside class="success">
+Succesful api call would give you 200
+</aside>
+
+[To try this Api please click this](https://lkext.lendingkart.com/apidoc/home.html#!/Partner_Controller/getDocumentPendenciesUsingGET)
