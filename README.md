@@ -8,7 +8,8 @@
 
 <p align="center"><img src="https://raw.githubusercontent.com/sean-hill/slate-dracula/master/source/images/slate-dracula.png" width=700 alt="Screenshot of Example Documentation created with Slate"></p>
 
-<p align="center"><em>The example above was created with Slate with a Dracula Theme twist. Check it out at <a href="https://sean-hill.github.io/slate-dracula">sean-hill.github.io/slate-dracula</a>.</em></p>
+<p align="center"><em>The example above was created with Slate with a Dracula Theme twist. 
+  Check out the demo at <a href="https://dracula.github.io/slate/">https://dracula.github.io/slate/</a></em></p>
 
 ## Features
 
